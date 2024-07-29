@@ -1,0 +1,519 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins');
+
+
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-image: url('background.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+}
+
+header {
+  background: transparent;
+  color: #fff;
+  padding: 1em;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  backdrop-filter: blur(100px);
+  border-bottom: 5px solid #fff;
+  position: relative;
+}
+
+#logo {
+  width: 80px;
+}
+
+header h1 {
+  margin: 0;
+  color: #fff;
+  margin-left: -8px; 
+}
+
+nav {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+}
+
+nav li {
+  margin: 0 20px;
+  cursor: pointer;
+  color: #c0f4d4;
+  display: flex;
+  align-items: center;
+  font-size: 1.5em;
+  transition: .5s;
+}
+
+nav li.active {
+  transition: .5s;
+  color: #fff;
+  font-weight: bold;
+  font-size: 2em;
+}
+
+nav .icon {
+  margin-right: 10px;
+  font-size: 1.7em;
+}
+
+#profile-pic {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  cursor: pointer;
+  object-fit: cover;
+}
+
+#content-container {
+  width: 100%;
+  height: calc(100vh - 70px);
+  position: relative;
+}
+
+#blank-canvas {
+  width: 100%;
+  height: 100%;
+  background: url('background.jpg') no-repeat center center;
+  background-size: cover;
+}
+
+#country-info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 0;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+#country-wrapper {
+  display: flex;
+  width: 100%;
+  overflow: hidden;
+}
+
+#country-display {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.country-item {
+  flex: 0 0 100vw;
+  text-align: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.country-item img {
+  width: 80vw;
+  max-width: 600px;
+  margin-bottom: 10px;
+}
+
+.country-item h2 {
+  font-size: 2.5em;
+  font-weight: bold;
+  margin: 10px 0;
+  color: #fff;
+}
+
+.selectButton {
+  padding: 10px 20px;
+  font-size: 1.2em;
+  border: none;
+  background-color: #fff;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+.scroll-button {
+  border: 2px solid white;
+  border-radius: 10px;
+  width: 80px;
+  height: 200px;
+  background-color: #c0f4d4;
+  position: absolute;
+  top: 40%;
+  transform: translateY(-50%);
+  z-index: 1;
+  background-size: 50%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.scroll-button:hover{
+  cursor: pointer;
+}
+
+#scrollLeft {
+  left: 250px;
+  background-image: url('left.png');
+}
+
+#scrollRight {
+  right: 250px;
+  background-image: url('right.png');
+}
+
+#tours-info {
+  width: 100%;
+  height: 95%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+}
+
+#virtual-tour {
+  width: 100%;
+  height: 100vh;
+  border: none;
+}
+
+/* Recipes Section */
+#recipes-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 25px;
+}
+
+.recipe-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr; 
+  grid-template-rows: 1fr; 
+  gap: 20px;
+  width: 90vw;
+  max-width: 1200px;
+  margin-top: 15px;
+}
+
+.recipe-box {
+  position: relative;
+  width: 100%;
+  height: 72vh; 
+  background-size: cover;
+  background-position: center;
+  border: 3px solid #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  backdrop-filter: blur(15px);
+  opacity: 0.8;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.recipe-box:hover {
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+.recipe-text {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  color: white;
+  font-size: 1.5em;
+  background: rgba(3, 55, 28, 0.5);
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.section-link {
+  display: block;
+  transition: transform 0.3s, font-size 0.3s;
+  padding: 10px;
+  text-align: center;
+  margin: 10px 0;
+}
+
+.section-link:hover {
+  transform: scale(1.1);
+  font-size: 1.2em;
+}
+
+
+#trivia-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 25px;
+}
+
+.trivia-question-box {
+  background-color: rgba(0, 0, 0, 0.7); 
+  border: 2px solid white; 
+  border-radius: 10px;
+  padding: 20px;
+  width: 80vw; 
+  max-width: 1000px; 
+  margin-bottom: 20px; 
+}
+
+.trivia-question {
+  text-align: center;
+  font-size: 2em;
+  margin: 0;
+  color: white;
+}
+
+
+.trivia-options {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); 
+  grid-template-rows: repeat(2, 1fr); 
+  gap: 20px; 
+  width: 90vw; 
+  height: 40vh; 
+  max-width: 1200px; 
+  max-height: 800px; 
+  margin: 0 auto; 
+  background: transparent;
+}
+
+.trivia-option {
+  background: transparent; 
+  border: 3px solid white; 
+  border-radius: 10px; 
+  padding: 20px;
+  text-align: center;
+  cursor: pointer;
+  color: #fff; 
+  transition: transform 0.3s;
+  box-sizing: border-box; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(50px);
+}
+
+.trivia-option:hover {
+  transform: scale(1.05);
+}
+
+.trivia-result h3 {
+  font-size: 1.8em;
+  margin-bottom: 15px;
+}
+
+.trivia-option.correct {
+  background-color: #4CAF50; 
+  color: white;
+}
+
+.trivia-option.incorrect {
+  background-color: #f44336; 
+  color: white;
+}
+
+/* Custom styles for Leaflet pop-ups */
+.leaflet-popup-content-wrapper {
+  background-color: #c0ecab; 
+  border-radius: 10px;
+  border: 2px solid #4caf50; 
+  padding: 10px;
+  font-family: 'Arial', sans-serif;
+}
+
+.leaflet-popup-tip-container {
+  width: auto;
+}
+
+.leaflet-popup-tip {
+  background: #4caf50; 
+}
+
+.leaflet-popup-content {
+  color: #2e7d32; 
+}
+
+.leaflet-popup-content a {
+  color: #1b5e20; 
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.leaflet-popup-content a:hover {
+  text-decoration: underline;
+}
+
+.leaflet-popup-close-button {
+  color: #1b5e20; 
+}
+
+#blank-canvas {
+  width: 100%;
+  height: 100%;
+  background: url('background.jpg') no-repeat center center;
+  background-size: cover;
+}
+
+#back-button {
+  position: absolute;
+  top: 575px;
+  left: 625px;
+  padding: 10px;
+  background: transparent;
+  font-family: 'Poppins', sans-serif;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  backdrop-filter: blur(20px);
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+  height: 70px;
+  width: 250px;
+  border: 2px solid white; 
+  border-radius: 10px;
+}
+
+#back-button:hover{
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  transform: scale(1.05);
+}
+
+#traveler1-title{
+  position: absolute;
+  top: -10px;
+  left: 220px; 
+  font-family: 'Poppins', sans-serif;
+  font-size: 60px;
+  color: white;
+  display: none; 
+  text-decoration: underline;
+  font-weight: bolder;
+ 
+}
+
+#traveler2-title{
+  position: absolute;
+ top: -10px;
+ left: 220px; 
+ font-family: 'Poppins', sans-serif;
+ font-size: 60px;
+ color: white;
+ display: none; 
+ text-decoration: underline;
+ font-weight: bolder;
+
+  }
+
+  #traveler1-bio{
+    position: absolute;
+    top: 70px;
+    left: 220px; 
+    font-family: 'Poppins', sans-serif;
+    font-size: 25px;
+    color: #c0ecab;
+    display: none; 
+    font-weight: bold;
+   }
+   
+   
+   #traveler2-bio{
+    position: absolute;
+    top: 70px;
+    left: 220px; 
+    font-family: 'Poppins', sans-serif;
+    font-size: 25px;
+    color: #c0ecab;
+    display: none;  
+    font-weight: bold;
+   }
+   
+   #storyText{
+    position: relative;
+    top: 150px;
+    left: 100px;  
+    font-family: 'Poppins', sans-serif;
+    font-size: 25px;
+    color: white;
+    font-weight: bold;
+    text-decoration: underline;
+    display: none;
+   }
+   
+   
+   #tipsText{
+    position: relative;
+    top: 150px;
+    left: 30px;  
+    font-family: 'Poppins', sans-serif;
+    font-size: 25px;
+    color: white;
+    font-weight: bold;
+    text-decoration: underline;
+    display: none;
+   }
+   
+   #traveler1-story{
+    position: absolute;
+    top: 200px;
+    left: 220px;  
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    color: white;
+    display: none;  
+    width: 475px;
+    font-weight: bold;
+   }
+   
+   
+   #traveler2-story{
+    position: absolute;
+    top: 200px;
+    left: 220px;  
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    color: white;
+    display: none;  
+    width: 475px;
+    font-weight: bold;
+   }
+   
+   #traveler1-tips{
+    position: absolute;
+    top: 200px;
+    left: 760px;  
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    color: white;
+    display: none;  
+    width: 480px;
+    font-weight: bold;
+   }
+   
+   
+   #traveler2-tips{
+    position: absolute;
+    top: 200px;
+    left: 760px;  
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    color: white;
+    display: none;  
+    width: 550px;
+    font-weight: bold;
+   }
+   
+   
